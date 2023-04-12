@@ -54,7 +54,7 @@
 										</div>
 										<input type="submit" class="btn button" value="Register"/>
 										<div class="">
-											<span>Already a member? <a href="sign-in.html">Sign In</a></span>
+											<span>Already a member? <a href="">Sign In</a></span>
 										</div>
 									</form>
 								</div>
@@ -70,7 +70,7 @@
 							<div class="preference">
 								<h2>Welcome Back!</h2>
 								<p>To keep connected with your friends please login with your personal info.</p>
-								<a href="sign-in.html" class="btn button">Sign In</a>
+								<a href="{{route('login')}}" class="btn button">Sign In</a>
 							</div>
 						</div>
 					</div>

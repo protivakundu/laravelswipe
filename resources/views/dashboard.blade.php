@@ -1,20 +1,4 @@
-<!-- <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
-    </div>
-</x-app-layout> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +29,7 @@
 								<a href="#notifications" data-toggle="tab" class="f-grow1"><i class="material-icons">notifications_none</i></a>
 								<button class="btn mode"><i class="material-icons">brightness_2</i></button>
 								<a href="#settings" data-toggle="tab"><i class="material-icons">settings</i></a>
-								<button class="btn power" onclick="visitPage();"><i class="material-icons">power_settings_new</i></button>
+								<a href="{{ route('logout')}}" class="btn power" onclick="visitPage();"><i class="material-icons">power_settings_new</i></a>
 							</div>
 						</div>
 					</div>
@@ -203,125 +187,12 @@
 										</form>
 										<button class="btn create" data-toggle="modal" data-target="#startnewchat"><i class="material-icons">create</i></button>
 									</div>
-									<div class="list-group sort">
-										<button class="btn filterDiscussionsBtn active show" data-toggle="list" data-filter="all">All</button>
-										<button class="btn filterDiscussionsBtn" data-toggle="list" data-filter="read">Read</button>
-										<button class="btn filterDiscussionsBtn" data-toggle="list" data-filter="unread">Unread</button>
-									</div>						
+														
 									<div class="discussions">
 										<h1>Discussions</h1>
 										<div class="list-group" id="chats" role="tablist">
-											<a href="#list-chat" class="filterDiscussions all unread single active" id="list-chat-list" data-toggle="list" role="tab">
-												<img class="avatar-md" src="dist/img/avatars/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
-												<div class="status">
-													<i class="material-icons online">fiber_manual_record</i>
-												</div>
-												<div class="new bg-yellow">
-													<span>+7</span>
-												</div>
-												<div class="data">
-													<h5>Janette Dalton</h5>
-													<span>Mon</span>
-													<p>A new feature has been updated to your account. Check it out...</p>
-												</div>
-											</a>									
-											<a href="#list-empty" class="filterDiscussions all unread single" id="list-empty-list" data-toggle="list" role="tab">
-												<img class="avatar-md" src="dist/img/avatars/avatar-male-1.jpg" data-toggle="tooltip" data-placement="top" title="Michael" alt="avatar">
-												<div class="status">
-													<i class="material-icons offline">fiber_manual_record</i>
-												</div>
-												<div class="new bg-pink">
-													<span>+10</span>
-												</div>
-												<div class="data">
-													<h5>Michael Knudsen</h5>
-													<span>Sun</span>
-													<p>How can i improve my chances of getting a deposit?</p>
-												</div>
-											</a>									
-											<a href="#list-chat" class="filterDiscussions all read single" id="list-chat-list2" data-toggle="list" role="tab">
-												<img class="avatar-md" src="dist/img/avatars/avatar-female-2.jpg" data-toggle="tooltip" data-placement="top" title="Lean" alt="avatar">
-												<div class="status">
-													<i class="material-icons offline">fiber_manual_record</i>
-												</div>
-												<div class="data">
-													<h5>Lean Avent</h5>
-													<span>Tus</span>
-													<p>Hey Chris, could i ask you to help me out with variation...</p>
-												</div>
-											</a>
-											<a href="#list-empty" class="filterDiscussions all read single" id="list-empty-list2" data-toggle="list" role="tab">
-												<img class="avatar-md" src="dist/img/avatars/avatar-male-2.jpg" data-toggle="tooltip" data-placement="top" title="Mariette" alt="avatar">
-												<div class="status">
-													<i class="material-icons offline">fiber_manual_record</i>
-												</div>
-												<div class="data">
-													<h5>Mariette Toles</h5>
-													<span>5 mins</span>
-													<p>By injected humour, or randomised words which...</p>
-												</div>
-											</a>
-											<a href="#list-chat" class="filterDiscussions all read single" id="list-chat-list3" data-toggle="list" role="tab">
-												<img class="avatar-md" src="dist/img/avatars/avatar-female-3.jpg" data-toggle="tooltip" data-placement="top" title="Harmony" alt="avatar">
-												<div class="status">
-													<i class="material-icons online">fiber_manual_record</i>
-												</div>
-												<div class="data">
-													<h5>Harmony Otero</h5>
-													<span>Mon</span>
-													<p>No more running out of the office at 4pm on Fridays!</p>
-												</div>
-											</a>
-											<a href="#list-empty" class="filterDiscussions all read single" id="list-empty-list3" data-toggle="list" role="tab">
-												<img class="avatar-md" src="dist/img/avatars/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Keith" alt="avatar">
-												<div class="status">
-													<i class="material-icons offline">fiber_manual_record</i>
-												</div>
-												<div class="data">
-													<h5>Keith Morris</h5>
-													<span>Fri</span>
-													<p>All your favourite books at your reach! We are now mobile.</p>
-												</div>
-											</a>
-											<a href="#list-request" class="filterDiscussions all unread single" id="list-request-list" data-toggle="list" role="tab">
-												<img class="avatar-md" src="dist/img/avatars/avatar-female-6.jpg" data-toggle="tooltip" data-placement="top" title="Louis" alt="avatar">
-												<div class="status">
-													<i class="material-icons offline">fiber_manual_record</i>
-												</div>
-												<div class="new bg-gray">
-													<span>?</span>
-												</div>
-												<div class="data">
-													<h5>Louis Martinez</h5>
-													<span>Feb 10</span>
-													<p>Hi Keith, I'd like to add you as a contact.</p>
-												</div>
-											</a>
-											<a href="#list-empty" class="filterDiscussions all read single" id="list-empty-list4" data-toggle="list" role="tab">
-												<img class="avatar-md" src="dist/img/avatars/avatar-male-3.jpg" data-toggle="tooltip" data-placement="top" title="Ryan" alt="avatar">
-												<div class="status">
-													<i class="material-icons offline">fiber_manual_record</i>
-												</div>
-												<div class="data">
-													<h5>Ryan Foster</h5>
-													<span>Feb 9</span>
-													<p>Dear Deborah, your Thai massage is today at 5pm.</p>
-												</div>
-											</a>
-											<a href="#list-chat" class="filterDiscussions all unread single" id="list-chat-list5" data-toggle="list" role="tab">
-												<img class="avatar-md" src="dist/img/avatars/avatar-male-4.jpg" data-toggle="tooltip" data-placement="top" title="Mildred" alt="avatar">
-												<div class="status">
-													<i class="material-icons offline">fiber_manual_record</i>
-												</div>
-												<div class="new bg-green">
-													<span>+9</span>
-												</div>
-												<div class="data">
-													<h5>Mildred Bennett</h5>
-													<span>Thu</span>
-													<p>Unfortunately your session today has been cancelled!</p>
-												</div>
-											</a>
+											@include('inc.users');									
+											
 										</div>
 									</div>
 								</div>
@@ -893,178 +764,7 @@
 						<!-- Start of Babble -->
 						<div class="babble tab-pane fade active show" id="list-chat" role="tabpanel" aria-labelledby="list-chat-list">
 							<!-- Start of Chat -->
-							<div class="chat" id="chat1">
-								<div class="top">
-									<div class="container">
-										<div class="col-md-12">
-											<div class="inside">
-												<a href="#"><img class="avatar-md" src="dist/img/avatars/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Keith" alt="avatar"></a>
-												<div class="status">
-													<i class="material-icons online">fiber_manual_record</i>
-												</div>
-												<div class="data">
-													<h5><a href="#">Keith Morris</a></h5>
-													<span>Active now</span>
-												</div>
-												<button class="btn connect d-md-block d-none" name="1"><i class="material-icons md-30">phone_in_talk</i></button>
-												<button class="btn connect d-md-block d-none" name="1"><i class="material-icons md-36">videocam</i></button>
-												<button class="btn d-md-block d-none"><i class="material-icons md-30">info</i></button>
-												<div class="dropdown">
-													<button class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons md-30">more_vert</i></button>
-													<div class="dropdown-menu dropdown-menu-right">
-														<button class="dropdown-item connect" name="1"><i class="material-icons">phone_in_talk</i>Voice Call</button>
-														<button class="dropdown-item connect" name="1"><i class="material-icons">videocam</i>Video Call</button>
-														<hr>
-														<button class="dropdown-item"><i class="material-icons">clear</i>Clear History</button>
-														<button class="dropdown-item"><i class="material-icons">block</i>Block Contact</button>
-														<button class="dropdown-item"><i class="material-icons">delete</i>Delete Contact</button>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="content" id="content">
-									<div class="container">
-										<div class="col-md-12">
-											<div class="date">
-												<hr>
-												<span>Yesterday</span>
-												<hr>
-											</div>
-											<div class="message">
-												<img class="avatar-md" src="dist/img/avatars/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Keith" alt="avatar">
-												<div class="text-main">
-													<div class="text-group">
-														<div class="text">
-															<p>We've got some killer ideas kicking about already.</p>
-														</div>
-													</div>
-													<span>09:46 AM</span>
-												</div>
-											</div>
-											<div class="message me">
-												<div class="text-main">
-													<div class="text-group me">
-														<div class="text me">
-															<p>Can't wait! How are we coming along with the client?</p>
-														</div>
-													</div>
-													<span>11:32 AM</span>
-												</div>
-											</div>
-											<div class="message">
-												<img class="avatar-md" src="dist/img/avatars/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Keith" alt="avatar">
-												<div class="text-main">
-													<div class="text-group">
-														<div class="text">
-															<p>Coming along nicely, we've got a draft for the client quarries completed.</p>
-														</div>
-													</div>
-													<span>02:56 PM</span>
-												</div>
-											</div>
-											<div class="message me">
-												<div class="text-main">
-													<div class="text-group me">
-														<div class="text me">
-															<p>Roger that boss!</p>
-														</div>
-													</div>
-													<div class="text-group me">
-														<div class="text me">
-															<p>I have already started gathering some stuff for the mood boards, excited to start!</p>
-														</div>
-													</div>
-													<span>10:21 PM</span>
-												</div>
-											</div>
-											<div class="message">
-												<img class="avatar-md" src="dist/img/avatars/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Keith" alt="avatar">
-												<div class="text-main">
-													<div class="text-group">
-														<div class="text">
-															<p>Great start guys, I've added some notes to the task. We may need to make some adjustments to the last couple of items - but no biggie!</p>
-														</div>
-													</div>
-													<span>11:07 PM</span>
-												</div>
-											</div>
-											<div class="date">
-												<hr>
-												<span>Today</span>
-												<hr>
-											</div>
-											<div class="message me">
-												<div class="text-main">
-													<div class="text-group me">
-														<div class="text me">
-															<p>Well done all. See you all at 2 for the kick-off meeting.</p>
-														</div>
-													</div>
-													<span>10:21 PM</span>
-												</div>
-											</div>
-											<div class="message">
-												<img class="avatar-md" src="dist/img/avatars/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Keith" alt="avatar">
-												<div class="text-main">
-													<div class="text-group">
-														<div class="text">
-															<div class="attachment">
-																<button class="btn attach"><i class="material-icons md-18">insert_drive_file</i></button>
-																<div class="file">
-																	<h5><a href="#">Tenacy Agreement.pdf</a></h5>
-																	<span>24kb Document</span>
-																</div>
-															</div>
-														</div>
-													</div>
-													<span>11:07 PM</span>
-												</div>
-											</div>
-											<div class="message me">
-												<div class="text-main">
-													<div class="text-group me">
-														<div class="text me">
-															<p>Hope you're all ready to tackle this great project. Let's smash some Brand Concept & Design!</p>
-														</div>
-													</div>
-													<span><i class="material-icons">check</i>10:21 PM</span>
-												</div>
-											</div>
-											<div class="message">
-												<img class="avatar-md" src="dist/img/avatars/avatar-female-5.jpg" data-toggle="tooltip" data-placement="top" title="Keith" alt="avatar">
-												<div class="text-main">
-													<div class="text-group">
-														<div class="text typing">
-															<div class="wave">
-																<span class="dot"></span>
-																<span class="dot"></span>
-																<span class="dot"></span>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="container">
-									<div class="col-md-12">
-										<div class="bottom">
-											<form class="position-relative w-100">
-												<textarea class="form-control" placeholder="Start typing for reply..." rows="1"></textarea>
-												<button class="btn emoticons"><i class="material-icons">insert_emoticon</i></button>
-												<button type="submit" class="btn send"><i class="material-icons">send</i></button>
-											</form>
-											<label>
-												<input type="file">
-												<span class="btn attach d-sm-block d-none"><i class="material-icons">attach_file</i></span>
-											</label> 
-										</div>
-									</div>
-								</div>
-							</div>
+							
 							<!-- End of Chat -->
 							<!-- Start of Call -->
 							<div class="call" id="call1">

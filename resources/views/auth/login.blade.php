@@ -45,7 +45,7 @@
 												<input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required autocomplete="current-password"  required>
 												<button class="btn icon"><i class="material-icons">lock_outline</i></button>
 											</div>
-											<button type="submit" class="btn button" formaction="index-2.html">Sign In</button>
+											<button type="submit" class="btn button" >Sign In</button>
 											<div class="callout">
 												<span>Don't have account? <a href="sign-up.html">Create Account</a></span>
 											</div>
@@ -63,7 +63,7 @@
 								<div class="preference">
 									<h2>Hello, Friend!</h2>
 									<p>Enter your personal details and start your journey with Swipe today.</p>
-									<a href="sign-up.html" class="btn button">Sign Up</a>
+									<a href="{{route('register')}}" class="btn button">Sign Up</a>
 								</div>
 							</div>
 						</div>
