@@ -5,7 +5,7 @@
 
 <head>
 		<meta charset="utf-8">
-		<title>Swipe – The Simplest Chat Platform</title>
+		<title>Swiphjgje – The Simplest Chaigjhgjht Platform</title>
 		<meta name="description" content="#">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Bootstrap core CSS -->
@@ -96,12 +96,14 @@
 										<div class="list-group" id="chats" role="tablist">
 											@if(isset($persons))
 												@foreach($persons as $person)
-												<a href="{{url('chat')}}" class="filterDiscussions all unread single active" id="list-chat-list" data-toggle="list" role="tab">
+												<a href="{{url('chat' , $person->id)}}" class="filterDiscussions all unread single active" id="list-chat-list" data-toggle="list" role="tab">
 													<img class="avatar-md" src="dist/img/avatars/avatar-female-1.jpg" data-toggle="tooltip" data-placement="top" title="Janette" alt="avatar">
 													<div class="status">
 														<i class="material-icons online">fiber_manual_record</i>
 													</div>
-													
+													<div class="new bg-yellow">
+														<span>+7</span>
+													</div>
 													<div class="data">
 														<h5>{{$person->name}}</h5>
 														<span>Mon</span>

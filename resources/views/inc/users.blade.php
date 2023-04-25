@@ -6,6 +6,7 @@
 												<div class="new bg-yellow">
 													<span>+7</span>
 												</div>
+												</div>
 												<div class="data">
 													<h5>Janette Dalton</h5>
 													<span>Mon</span>
